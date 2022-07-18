@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  sms-router-go:
+    container_name: golang
+    build: 
+      context: ../
+      dockerfile: ./docker/go/Dockerfile
+    restart: unless-stopped
+    tty: true
+    ports:
+    - 8080:8080
+    networks:
+      - sms-router
+
+networks:
+  sms-router:
+    driver: bridge
