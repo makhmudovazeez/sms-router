@@ -1,4 +1,5 @@
 init:
+	docker-compose -f .\dockerdocker-compose down -v
 	docker-compose -f .\dockerdocker-compose up -d --build
 
 stop:
